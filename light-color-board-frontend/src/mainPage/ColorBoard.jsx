@@ -1,16 +1,15 @@
 import { useEffect } from "react";
-import ColorDot from "./ColorDot";
-import './ColorBoard.css'
+import './MainPage.css'
+import DotRow from "./DotRow"
 
 function ColorBoard() {
     const rowLength = 24
-    const numberOfRows = 24
-    useEffect(()=>{
-        
-    }, [])
+    const numberOfRows = Array.from({ length: rowLength }, (_, i) => i)
+    
+    
     return (
         <div className="color-board">
-            {Array.from({length: rowLength},(_,index) => <ColorDot key={index} />)}
+            {numberOfRows.map(i => <DotRow length = {rowLength} rowIndex = {i}/>) }
         </div>
     )
 }
