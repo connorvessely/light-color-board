@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { SelectColorContext } from "./MainPage";
+
 function ColorDot() {
     const [fillColor, setFillColor] = useState("")
-    useEffect(()=>{
-        
-    }, [])
+    const {selectedColor, setSelectedColor} = useContext(SelectColorContext);
     return (
-        <div className={"color-dot "+fillColor} onClick={()=>setFillColor("red")}>
+        <div className={"color-dot "+fillColor} onClick={()=>setFillColor(selectedColor)}>
             
         </div>
     )

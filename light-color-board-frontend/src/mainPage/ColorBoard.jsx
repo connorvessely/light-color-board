@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import './MainPage.css'
 import DotRow from "./DotRow"
 
 function ColorBoard() {
@@ -9,7 +8,7 @@ function ColorBoard() {
     
     return (
         <div className="color-board">
-            {numberOfRows.map(i => <DotRow length = {rowLength} rowIndex = {i}/>) }
+            {numberOfRows.map(i => <DotRow key = {i} length = {rowLength} rowIndex = {i}/>) }
         </div>
     )
 }
