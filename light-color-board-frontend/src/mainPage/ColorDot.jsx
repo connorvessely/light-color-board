@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from "react";
-import { SelectColorContext } from "./MainPage";
+import { MainPageContext } from "./MainPage";
 
 function ColorDot() {
     const [fillColor, setFillColor] = useState("")
-    const {selectedColor, setSelectedColor} = useContext(SelectColorContext);
+    const {powerIsOn, selectedColor, setSelectedColor} = useContext(MainPageContext);
     return (
-        <div className={"color-dot "+ fillColor + (fillColor==""?"":" filled-in")} onClick={()=>setFillColor(selectedColor)}>
+        <div className={"color-dot "+ fillColor + (powerIsOn? " on": "")} onClick={()=>setFillColor(selectedColor)}>
             
         </div>
     )

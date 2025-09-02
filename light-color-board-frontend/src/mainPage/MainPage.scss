@@ -5,12 +5,21 @@ $option-height: min(7vh, 7vw);
 $transition-time: 0.5s;
 $red: rgb(246, 80, 80);
 $green: green;
-$blue: blue;
+$blue: rgb(75, 75, 248);
 $yellow: yellow;
 
 .main-page{
     display: flex;
     justify-content: space-between;
+}
+
+.power-button {
+    &.on{
+        background-color: green;
+    }
+    &.off{
+        background-color: red;
+    }
 }
 
 .palette{
@@ -43,8 +52,6 @@ $yellow: yellow;
 }
 
 @mixin glow($color){    
-    transition: $transition-time;
-    background-color: $color;
     box-shadow:
     inset 0 0 1.6vh #fff,
     inset 1.3vh 0 $dot-height color.scale($color, $lightness: 50%),
@@ -55,19 +62,35 @@ $yellow: yellow;
 }
 
 .red{
-    @include glow($red)
+    transition: $transition-time;
+    background-color: $red;
+    &.on{
+        @include glow($red)
+    }
 }
 
 .green{
-    @include glow($green)
+    transition: $transition-time;
+    background-color: $green;
+    &.on{
+        @include glow($green)
+    }
 }
 
 .blue{
-    @include glow($blue)
+    transition: $transition-time;
+    background-color: $blue;
+    &.on{
+        @include glow($blue)
+    }
 }
 
 .yellow{
-    @include glow($yellow)
+    transition: $transition-time;
+    background-color: $yellow;
+    &.on{
+        @include glow($yellow)
+    }
 }
 
 .color-option{
