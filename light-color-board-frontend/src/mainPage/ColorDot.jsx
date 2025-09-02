@@ -5,7 +5,7 @@ function ColorDot() {
     const [fillColor, setFillColor] = useState("")
     const {selectedColor, setSelectedColor} = useContext(SelectColorContext);
     return (
-        <div className={"color-dot "+fillColor} onClick={()=>setFillColor(selectedColor)}>
+        <div className={"color-dot "+ fillColor + (fillColor==""?"":" filled-in")} onClick={()=>setFillColor(selectedColor)}>
             
         </div>
     )
