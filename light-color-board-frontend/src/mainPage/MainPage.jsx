@@ -1,6 +1,6 @@
 import { createContext, useState } from 'react';
 import ColorOption from './ColorOption';
-import './MainPage.css'
+import './MainPage.scss'
 import ColorBoard from './colorBoard'
 
 export const SelectColorContext = createContext(null)
