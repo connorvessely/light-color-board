@@ -2,8 +2,9 @@ import { useEffect } from "react";
 import DotRow from "./DotRow"
 
 function ColorBoard() {
-    const rowLength = 24
-    const numberOfRows = Array.from({ length: rowLength }, (_, i) => i)
+    //TODO: select proper row length
+    const rowLength = 30
+    const numberOfRows = Array.from({ length: 18 }, (_, i) => i)
     
     
     return (

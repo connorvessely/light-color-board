@@ -5,7 +5,7 @@ import { SelectColorContext } from "./MainPage";
 function ColorOption({colorName}) {
     const {selectedColor, setSelectedColor} = useContext(SelectColorContext);
     return (
-        <div className={"color-dot " + colorName + (selectedColor==colorName?" selected-color":"")} onClick={()=>setSelectedColor(colorName)}>
+        <div className={"color-option " + colorName + (selectedColor==colorName?" selected-color":"")} onClick={()=>setSelectedColor(colorName)}>
             
         </div>
     )

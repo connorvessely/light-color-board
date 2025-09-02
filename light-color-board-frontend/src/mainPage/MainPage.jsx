@@ -13,19 +13,19 @@ function MainPage() {
     const [selectedColor, setSelectedColor] = useState(colorOptions[0])
 
     return (
-        <>
-        <SelectColorContext
-            value={{
-                selectedColor,
-                setSelectedColor
-            }}
-        >
-            <div className='palette'>
-                {colorOptions.map(color=><ColorOption key={color} colorName = {color} />)}
-            </div>
-            <ColorBoard></ColorBoard>
-        </SelectColorContext>
-        </>
+        <div className='main-page'>
+            <SelectColorContext
+                value={{
+                    selectedColor,
+                    setSelectedColor
+                }}
+            >
+                <div className='palette'>
+                    {colorOptions.map(color=><ColorOption key={color} colorName = {color} />)}
+                </div>
+                <ColorBoard></ColorBoard>
+            </SelectColorContext>
+        </div>
     )
 }
 
