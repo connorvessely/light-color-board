@@ -1,10 +1,12 @@
 @use 'sass:color';
+/* TODO: Select proper height, width, margin*/
 $dot-height: min(4vh, 4vw);
 $option-height: min(7vh, 7vw);
 $transition-time: 0.5s;
 $red: rgb(246, 80, 80);
 $green: green;
 $blue: blue;
+$yellow: yellow;
 
 .main-page{
     display: flex;
@@ -28,18 +30,16 @@ $blue: blue;
     flex-direction: row;
 }
 
+.even{
+    margin-left: calc($dot-height/2);
+}
+
 .color-dot{
-    /* TODO: Select proper height, width, margin*/
     background-color: black;
     height: $dot-height;
     width: $dot-height;
     border-radius: 50%; 
     margin: calc($dot-height/8);
-}
-
-.filled-in{
-    transition: $transition-time;
-
 }
 
 @mixin glow($color){    
@@ -64,6 +64,10 @@ $blue: blue;
 
 .blue{
     @include glow($blue)
+}
+
+.yellow{
+    @include glow($yellow)
 }
 
 .color-option{

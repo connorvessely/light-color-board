@@ -9,7 +9,7 @@ function MainPage() {
     
 
 
-    const colorOptions = ["red", "green", "blue"]
+    const colorOptions = ["red", "green", "blue", "yellow"]
     const [selectedColor, setSelectedColor] = useState(colorOptions[0])
 
     return (
