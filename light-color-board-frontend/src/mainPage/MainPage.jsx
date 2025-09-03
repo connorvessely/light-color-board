@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import ColorOption from './ColorOption';
 import './MainPage.scss'
 import ColorBoard from './colorBoard'
@@ -9,24 +9,40 @@ function MainPage() {
 
     const colorOptions = ["red", "green", "blue", "yellow"]
     const [selectedColor, setSelectedColor] = useState(colorOptions[0])
-    const [powerIsOn, setPowerIsOn] = useState(false)
-
+    const [powerIsOn, setPowerIsOn] = useState(localStorage.getItem("power"))
+    const [shouldClear, setShouldClear] = useState(false)
+    const powerChange = ()=>{
+        setPowerIsOn(!powerIsOn)
+        localStorage.setItem("power", !powerIsOn)
+    }
+    const clearBoard = () => {
+        localStorage.clear()
+        setShouldClear(true)
+    }
     return (
         <div className='main-page'>
             <MainPageContext
                 value={{
                     powerIsOn,
                     selectedColor,
-                    setSelectedColor
+                    setSelectedColor,
+                    shouldClear,
+                    setShouldClear
                 }}
             >
                 <div className="sidebar">
-                    <button className={'power-button ' + (powerIsOn ? "on" : "off")} onClick={()=>setPowerIsOn(!powerIsOn)}>
+                    <button className={'power-button ' + (powerIsOn ? "on" : "off")} onClick={powerChange}>
                         {powerIsOn ? "ON" : "OFF"}
+                    </button>
+                    <button onClick={clearBoard}>
+                        Clear
                     </button>
                     <div className='palette'>
                         {colorOptions.map(color=><ColorOption key={color} colorName = {color} />)}
                     </div>
+                    {/* <button className="save">
+                        SAVE
+                    </button> */}
                 </div>
                 
                 <ColorBoard></ColorBoard>
