@@ -44,6 +44,7 @@ $yellow: yellow;
 }
 
 .color-dot{
+    cursor: pointer;
     background-color: black;
     height: $dot-height;
     width: $dot-height;
@@ -94,6 +95,8 @@ $yellow: yellow;
 }
 
 .color-option{
+    cursor: pointer;
+    z-index: 1;
     height: $option-height;
     width: $option-height;
     border-radius: 50%;
