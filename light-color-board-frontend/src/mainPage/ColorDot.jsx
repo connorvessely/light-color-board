@@ -12,6 +12,7 @@ function ColorDot({id}) {
     useEffect(()=>{
         if (shouldClear){
             setFillColor("")
+            localStorage.setItem(id, "")
             setShouldClear(false)
         }
     }, [shouldClear])

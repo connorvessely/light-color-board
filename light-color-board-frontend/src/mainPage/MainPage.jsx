@@ -15,10 +15,7 @@ function MainPage() {
         setPowerIsOn(!powerIsOn)
         localStorage.setItem("power", !powerIsOn)
     }
-    const clearBoard = () => {
-        localStorage.clear()
-        setShouldClear(true)
-    }
+
     return (
         <div className='main-page'>
             <MainPageContext
@@ -34,15 +31,15 @@ function MainPage() {
                     <button className={'power-button ' + (powerIsOn ? "on" : "off")} onClick={powerChange}>
                         {powerIsOn ? "ON" : "OFF"}
                     </button>
-                    <button onClick={clearBoard}>
-                        Clear
-                    </button>
                     <div className='palette'>
                         {colorOptions.map(color=><ColorOption key={color} colorName = {color} />)}
                     </div>
                     {/* <button className="save">
                         SAVE
                     </button> */}
+                    <button onClick={()=>setShouldClear(true)}>
+                        Clear
+                    </button>
                 </div>
                 
                 <ColorBoard></ColorBoard>
